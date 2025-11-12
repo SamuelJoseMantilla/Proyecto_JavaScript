@@ -2,6 +2,9 @@
 
 Sistema de gestión de aprendizaje (LMS) desarrollado con JavaScript vanilla, Web Components y localStorage. Permite gestionar cursos, docentes, módulos, lecciones y administrativos.
 
+# Netlify
+https://lms-abc-samuel.netlify.app/#/public
+
 ## 🚀 Tecnologías
 
 - **HTML5** - Estructura semántica
