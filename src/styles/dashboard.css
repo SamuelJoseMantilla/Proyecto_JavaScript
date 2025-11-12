@@ -1,0 +1,241 @@
+/**
+ * Estilos de Dashboard View - Estilo Universitario Profesional
+ * Inspirado en Universidad EAN
+ */
+
+.dashboard-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #FAFBFC;
+}
+
+.dashboard-header {
+    background: var(--white);
+    color: var(--gray-900);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+    position: relative;
+}
+
+.header-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    overflow-y: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dashboard-main section {
+    margin-bottom: var(--spacing-3xl);
+    background: var(--white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+}
+
+.dashboard-main h2 {
+    margin: 0 0 var(--spacing-xl) 0;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.3px;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 3px solid var(--primary);
+    display: inline-block;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--white) 0%, #F8F9FA 100%);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--primary);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    opacity: 0.05;
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--primary-dark);
+}
+
+.stat-card h3 {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    letter-spacing: 0.8px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-number {
+    margin: 0;
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--primary);
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+}
+
+.courses-grid,
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.course-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
+}
+
+.course-card:hover::before {
+    transform: scaleX(1);
+}
+
+.course-code {
+    font-size: var(--font-size-xs);
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-card h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.2px;
+    line-height: 1.4;
+}
+
+.teacher-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+}
+
+.teacher-card:hover {
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
+}
+
+.teacher-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-base);
+}
+
+.teacher-card:hover .teacher-photo {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-info h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.teacher-code,
+.teacher-email,
+.teacher-area,
+.teacher-courses {
+    margin: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+

@@ -1,0 +1,221 @@
+/**
+ * Estilos de Admin View - Estilo Universitario Profesional
+ * Inspirado en Universidad EAN
+ */
+
+.admin-container {
+    min-height: 100vh;
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-header {
+    background: var(--white);
+    color: var(--gray-900);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header h1 {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+    position: relative;
+}
+
+.admin-tabs {
+    background: var(--white);
+    border-bottom: 2px solid var(--gray-200);
+    display: flex;
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-lg);
+    overflow-x: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tab-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 0.2px;
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    background: rgba(0, 102, 204, 0.05);
+}
+
+.tab-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    font-weight: 700;
+    background: rgba(0, 102, 204, 0.05);
+}
+
+.tab-btn.active::before {
+    transform: scaleX(1);
+    background: var(--primary);
+}
+
+.admin-content {
+    flex: 1;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    overflow-y: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.tab-header h2 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.3px;
+}
+
+.table-container {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+}
+
+.table-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.modulo-item,
+.leccion-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.modulo-item::before,
+.leccion-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform var(--transition-base);
+}
+
+.modulo-item:hover,
+.leccion-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transform: translateX(2px);
+}
+
+.modulo-item:hover::before,
+.leccion-item:hover::before {
+    transform: scaleY(1);
+}
+
+.modulo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.modulo-header h3 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.3px;
+}
+
+.modulo-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.lecciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.leccion-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .admin-tabs {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .tab-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
