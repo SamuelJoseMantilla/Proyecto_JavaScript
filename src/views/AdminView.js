@@ -489,7 +489,7 @@ class AdminView extends HTMLElement {
             this.loadTab(this.activeTab);
         }
     }
-
+    
     showCursoModal(id = null) {
         const modal = this.querySelector('#admin-modal');
         const appData = getData('app-data') || { cursos: [], docentes: [] };
